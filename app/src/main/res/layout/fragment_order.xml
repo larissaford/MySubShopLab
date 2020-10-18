@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="sandwichData"
+            type="com.example.mysubshop.Sandwich" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".OrderFragment">
+
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/bakery_back"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/panini"
+            android:layout_width="192dp"
+            android:layout_height="79dp"
+            android:contentDescription="TODO"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.411"
+            app:srcCompat="@drawable/ic_food_obvious_panini"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/hoagie"
+            android:layout_width="149dp"
+            android:layout_height="153dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.394"
+            app:srcCompat="@drawable/hoagie"
+            tools:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/sandwich"
+            android:layout_width="140dp"
+            android:layout_height="311dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.345"
+            app:srcCompat="@drawable/ic_sandwhichanddrink"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/current_sandwich"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={sandwichData.name}"
+            android:textSize="24sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cost_of_sub"
+            app:layout_constraintEnd_toStartOf="@+id/cost_of_sub"
+            app:layout_constraintHorizontal_bias="0.845"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/cost_of_sub"
+            android:layout_width="83dp"
+            android:layout_height="36dp"
+            android:text="@={sandwichData.sandwichCostText}"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.631"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.208"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/submit_order_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.499"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <CheckBox
+            android:id="@+id/lettuce_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onAdditionsAddedCheckboxClicked"
+            android:text="@string/lettuce"
+            app:layout_constraintBottom_toTopOf="@+id/submit_order_button"
+            app:layout_constraintEnd_toStartOf="@+id/tomatoes_check"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <CheckBox
+            android:id="@+id/tomatoes_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onAdditionsAddedCheckboxClicked"
+            android:text="@string/tomatoes"
+            app:layout_constraintBaseline_toBaselineOf="@+id/lettuce_check"
+            app:layout_constraintEnd_toStartOf="@+id/bacon_check"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/lettuce_check" />
+
+        <CheckBox
+            android:id="@+id/bacon_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onAdditionsAddedCheckboxClicked"
+            android:text="@string/bacon"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tomatoes_check"
+            app:layout_constraintEnd_toStartOf="@+id/mayo_check"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tomatoes_check" />
+
+        <CheckBox
+            android:id="@+id/mayo_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onAdditionsAddedCheckboxClicked"
+            android:text="@string/mayonaise"
+            app:layout_constraintBaseline_toBaselineOf="@+id/bacon_check"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/bacon_check" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/bacon_check"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:id="@+id/bread_type_text"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:text="@string/bread_type"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/wheat_radio"
+                app:layout_constraintEnd_toStartOf="@+id/wheat_radio"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/background" />
+
+            <RadioButton
+                android:id="@+id/wheat_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onBreadRadioButtonClicked"
+                android:text="@string/wheat"
+                app:layout_constraintBottom_toTopOf="@+id/tomatoes_check"
+                app:layout_constraintEnd_toStartOf="@+id/gluten_free_radio"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/bread_type_text"
+                app:layout_constraintTop_toBottomOf="@+id/sandwich_button" />
+
+            <RadioButton
+                android:id="@+id/gluten_free_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onBreadRadioButtonClicked"
+                android:text="@string/gluten_free"
+                app:layout_constraintBaseline_toBaselineOf="@+id/wheat_radio"
+                app:layout_constraintEnd_toStartOf="@+id/background"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/wheat_radio" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/tomatoes_check"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.88">
+
+            <RadioButton
+                android:id="@+id/sandwich_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onSandwichRadioButtonClicked"
+                android:text="@string/sandwich"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/hoagie_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onSandwichRadioButtonClicked"
+                android:text="@string/hoagie"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/panini_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onSandwichRadioButtonClicked"
+                android:text="@string/panini"
+                android:textSize="24sp" />
+        </RadioGroup>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

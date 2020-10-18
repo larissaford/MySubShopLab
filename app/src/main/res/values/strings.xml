@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">My Sub Shop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="order_now">ORDER NOW!</string>
+    <string name="previous_orders">PREVIOUS ORDERS</string>
+    <string name="total_cost">0</string>
+    <string name="panini">Panini</string>
+    <string name="hoagie">Hoagie</string>
+    <string name="sandwich">Sandwich</string>
+    <string name="Panini_cost">$7</string>
+    <string name="hoagie_cost">$10</string>
+    <string name="sandwich_cost">$5</string>
+    <string name="bread_type">Bread type</string>
+    <string name="submit">Submit</string>
+    <string name="total">Total: </string>
+    <string name="gluten_free">Gluten Free</string>
+    <string name="wheat">Wheat</string>
+    <string name="mayonaise">mayonaise</string>
+    <string name="bacon">bacon</string>
+    <string name="tomatoes">tomatoes</string>
+    <string name="lettuce">lettuce</string>
+    <string name="reciept_title">Reciept</string>
+    <string name="with">with</string>
+</resources>
